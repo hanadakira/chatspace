@@ -55,16 +55,16 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'haml-rails'
 gem 'erb2haml'
 
-gem 'devise'
+# gem 'devise'
 
-group :development do 
-     gem 'rspec'
-end
+# group :development do 
+#      gem 'rspec'
+# end
 
-group :test do 
-     gem 'rspec'
-end
+# group :test do 
+#      gem 'rspec'
+# end
 
-group :production do 
-     gem 'unicorn'
-end
+# group :production do 
+#      gem 'unicorn'
+# end
