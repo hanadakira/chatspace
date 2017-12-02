@@ -3,8 +3,6 @@
 |Column|Type|Options|
 |------|----|------|
 |name|string|null: false,add_index|
-|password|text|null: false|
-|email|text|null: false|
 
 ### association
 - has_many :messages
