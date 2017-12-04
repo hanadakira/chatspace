@@ -2,20 +2,38 @@
 
 .menu
  .menu__user
-  %p
-   user
+  .menu__user-content
+   .menu__user-content--name
+   .menu__user-content--action
+    .menu__user-content--action-new
+    .menu__user-content--action-edit
+
  .menu__group
-  %p
-   groupname
+  .menu__group-list
+   .menu__group-list--name
+   .menu__group-list--latest
+ .menu__group
+  .menu__group-list
+   .menu__group-list--name
+   .menu__group-list--latest
 
 .main
- .main__title
-  %p
-   title
- .main__messages
-  .main__messages--view
-  %p
-   messages
+ .main__top
+  .main__top--title
+  .main__top--edit
+  .main__top--members
+
+ .main__talk
+  .main__talk--individual
+   .main__talk--individual-name
+   .main__talk--individual-date
+   .main__talk--individual-text
+  .main__talk--individual
+   .main__talk--individual-name
+   .main__talk--individual-date
+   .main__talk--individual-text
+
+
  .main__format
-  %p
-   sent
+  .main__format--post
+  
