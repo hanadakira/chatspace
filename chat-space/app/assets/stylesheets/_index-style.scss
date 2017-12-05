@@ -9,19 +9,38 @@ html,body{
   .header{
     height: 150px;
     background: #253141;
-    padding: 23px 20px;
+    padding: 0 20px;
     &__name{
       font-size: 16px;
       font-weight: bold;
       color: #ffffff;
       float: left;
-      padding-top: 50px;
+      padding-top: 70px;
     }
     &__edit{
       float: right;
       font-size: 16px;
       color: #ffffff;
-      padding-top: 50px;
+      padding-top: 70px;
+    }
+  }
+  .bottom{
+    height: calc(100% - 150px);
+    background: #2f3e51;
+    padding: 20px 20px;
+    &-content{
+      height: 31px;
+      padding-bottom: 40px;
+      &__name{
+        font-size: 15px;
+        font-weight: bold;
+        color: #ffffff;
+      }
+      &__latest{
+        font-size: 11px;
+        color: #ffffff;
+        padding-top: 5px;
+      }
     }
   }
 }
