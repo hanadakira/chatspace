@@ -1,0 +1,27 @@
+html,body{
+  height: 100%;
+}
+
+.left-content{
+  height: 100%;
+  width: 300px;
+  float: left;
+  .header{
+    height: 150px;
+    background: #253141;
+    padding: 23px 20px;
+    &__name{
+      font-size: 16px;
+      font-weight: bold;
+      color: #ffffff;
+      float: left;
+      padding-top: 50px;
+    }
+    &__edit{
+      float: right;
+      font-size: 16px;
+      color: #ffffff;
+      padding-top: 50px;
+    }
+  }
+}
