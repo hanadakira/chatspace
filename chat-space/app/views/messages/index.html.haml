@@ -35,9 +35,8 @@
         %p
           MEMBER: member1,member2
     .header__edit
-      .header__edit-button
-        %p
-          EDIT
+      =link_to root_path do
+        .header__edit-button Edit
   .middle
     .middle-content
       .middle-content__name
