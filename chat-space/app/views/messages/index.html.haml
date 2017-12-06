@@ -1,13 +1,14 @@
-
+.notice
+  %p
+    チャットグループを作成しました。
 .left-content
   .header
     .header__name
       %p
         hanada
     .header__edit
-      %i.fa.fa-cog
       %i.fa.fa-pencil-square-o
-
+      %i.fa.fa-cog
   .bottom
     .bottom-content
       .bottom-content__name
@@ -58,3 +59,12 @@
       .middle-content__message
         %p
           内容
+  .footer
+    .footer__content
+      .footer__content--text
+        %form{ action: "/",method: "post"}
+          %input{ type:"text", name: "text", placeholder:"type message"}
+          %label{id: "imageFile"}
+            %i{id: "imageFile"}=fa_icon "image"
+            %input{ type: :file, name: "imageFile", id: "image", style: "display: none"}
+          %input{ type: :submit, value:"Send"}
