@@ -12,7 +12,7 @@ html,body{
   width: 300px;
   float: left;
   .header{
-    height: $headerHeight;
+    height: 20%;
     background: #253141;
     padding: $menuPadding;
     &__name{
@@ -30,9 +30,10 @@ html,body{
     }
   }
   .bottom{
-    height: calc(100% - #{$headerHeight});
+    height: 80%;
     background: #2f3e51;
     padding: $menuPadding;
+    overflow: scroll;
     &-content{
       height: 31px;
       padding: 20px 0;
@@ -53,9 +54,9 @@ html,body{
 .main{
   height: 100%;
   width: calc(100% - 300px);
-  float: left;
+  float: right;
   .header{
-    height: 149px;
+    height: 20%;
     width: 100%;
     border-bottom: 1px solid #eee;
     &__group{
@@ -81,11 +82,13 @@ html,body{
     }
   }
   .middle{
-    min-height: calc(100% - 240px);
+    height: 70%;
     box-sizing: border-box;
     padding-top: 46px;
+    overflow: scroll;
+
     &-content{
-      padding: 0 0 40px 40px;
+      padding: 0 40px 40px 40px;
       &__name{
         font-weight: bold;
         color: $mainFontColor;
@@ -107,27 +110,31 @@ html,body{
   }
   .footer{
     box-sizing: border-box;
-    height: 90px;
-    width: calc(100% - 300px);
+    height: 10%;
+    width: 100%;
     padding: 0 40px;
-    position: absolute;
     background: gray;
     &__content{
-      margin: 20px 0;
       &--text{
+        padding:10px 0;
         & input[type="text"] {
-          margin-top: 20px;
           height: $formHeight;
           width: 80%;
           margin: 0 10px;
           padding-left: 5px;
         }
+        & input[type="file"]{
+          height: 50px;
+          margin-right: 10px;
+        }
         & input[type="submit"] {
           height: $formHeight;
-          padding: 0 30px;
+          padding: 0 20px;
+          margin-left: 15px;
           color: $fontColor;
           background: $buttonColor;
           float: right;
+          border: none;
         }
       }
     }
