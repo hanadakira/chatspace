@@ -1,0 +1,157 @@
+html,body{
+  height: 100vh;
+}
+.notice{
+  color: $fontColor;
+  text-align: center;
+  background: #38AEF0;
+}
+
+.left-content{
+  height: 100%;
+  width: 300px;
+  float: left;
+  .header{
+    height: 20%;
+    background: #253141;
+    padding: $menuPadding;
+    &__name{
+      font-size: 16px;
+      font-weight: bold;
+      color: $fontColor;
+      float: left;
+      padding-top: 70px;
+    }
+    &__edit{
+      float: right;
+      font-size: 16px;
+      color: $fontColor;
+      padding-top: 70px;
+    }
+  }
+  .bottom{
+    height: 80%;
+    background: #2f3e51;
+    padding: $menuPadding;
+    overflow: scroll;
+    &-content{
+      height: 31px;
+      padding: 20px 0;
+      &__name{
+        font-size: 15px;
+        font-weight: bold;
+        color: $fontColor;
+      }
+      &__latest{
+        font-size: 11px;
+        color: $fontColor;
+        padding-top: 5px;
+      }
+    }
+  }
+}
+
+.main{
+  height: 100%;
+  width: calc(100% - 300px);
+  float: right;
+  .header{
+    height: 20%;
+    width: 100%;
+    border-bottom: 1px solid #eee;
+    &__group{
+      padding: 35px 0 0 40px;
+      float: left;
+      &-title{
+        font-size: 20px;
+        color: #333333;
+        padding-bottom: 15px;
+      }
+      &-member{
+        font-size: 12px;
+        color: #999999;
+      }
+    }
+    &__edit{
+      float: right;
+      border: 1px solid $buttonColor;
+      margin: 28px 40px 0 0;
+      text-align: center;
+      padding: 10px 20px;
+      color: $buttonColor;
+      a{
+        text-decoration: none;
+        color: $buttonColor;
+      }
+    }
+  }
+  .middle{
+    height: 70%;
+    box-sizing: border-box;
+    padding-top: 46px;
+    overflow: scroll;
+
+    &-content{
+      padding: 0 40px 40px 40px;
+      &__name{
+        font-weight: bold;
+        color: $mainFontColor;
+        float: left;
+        font-size: 16px;
+      }
+      &__date{
+        float: left;
+        margin-left: 10px;
+        font-size: 12px;
+        color: #999999;
+      }
+      &__message{
+        clear: both;
+        font-size: 14px;
+        color: $mainFontColor;
+      }
+    }
+  }
+  .footer{
+    box-sizing: border-box;
+    height: 10%;
+    width: 100%;
+    padding: 0 40px;
+    background: gray;
+    &__content{
+      &--text{
+        float:left;
+        padding:10px 0;
+        width: 80%;
+        & input[type="text"] {
+          height: $formHeight;
+          margin: 0 10px;
+          padding: 0 10px;
+          width: 100%;
+        }
+      }
+      &--image{
+        margin-top: 20px;
+        float: left;
+        & input[type="file"]{
+          margin-top: 5px;
+          width:18px;
+          height:15px;
+          overflow: hidden;
+        }
+      }
+      &--button{
+        & input[type="submit"] {
+          height: 55px;
+          padding: 0 30px;
+          margin: 9px 0 0 50px;
+          color: $fontColor;
+          background: $buttonColor;
+          float: left;
+          border: none;
+        }
+      }
+    }
+  }
+}
+
