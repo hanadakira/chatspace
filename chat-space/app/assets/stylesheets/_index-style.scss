@@ -4,7 +4,7 @@ html,body{
 .notice{
   color: $fontColor;
   text-align: center;
-  background: #38AEF0;
+  background: $buttonColor;
 }
 
 .left-content{
@@ -69,7 +69,7 @@ html,body{
       }
       &-member{
         font-size: 12px;
-        color: #999999;
+        color: $mainFontColorSub;
       }
     }
     &__edit{
@@ -103,7 +103,7 @@ html,body{
         float: left;
         margin-left: 10px;
         font-size: 12px;
-        color: #999999;
+        color: $mainFontColorSub;
       }
       &__message{
         clear: both;
