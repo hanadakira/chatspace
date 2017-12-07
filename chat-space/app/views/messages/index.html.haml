@@ -60,10 +60,11 @@
           内容
   .footer
     .footer__content
-      .footer__content--text
-        %form{ action: "/",method: "post"}
-          %input{ type:"text", name: "text", placeholder:"type message"}
-          %label{id: "imageFile"}
-            %i{id: "imageFile"}=fa_icon "image"
-            %input{ type: :file, name: "imageFile", id: "image", style: "display: none"}
+      %form{ action: "/",method: "post"}
+        .footer__content--text
+          %input{ type:"text", name: "text", placeholder:"type a message"}
+        .footer__content--image
+          %labal{ id:"image"}
+            %input.fa.fa-image{ type: :file, name: "image", id: "image"}
+        .footer__content--button
           %input{ type: :submit, value:"Send"}
