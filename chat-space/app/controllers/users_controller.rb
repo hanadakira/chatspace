@@ -1,13 +1,15 @@
 class UsersController < ApplicationController
 
   def edit
-    @user = User.find(params[:id]) if user.id == current_user.id
+    @user = User.find(params[:id])
   end
 
   def update
     user =User.find(params[:id])
+    if user.id == current_user.id
     user.update(user_params)
     move_to_index
+    end
   end
 
   private
