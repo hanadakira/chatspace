@@ -10,19 +10,13 @@
         %i.fa.fa-cog
   .bottom
     .bottom-content
-      .bottom-content__name
-        %p
-          グループ
-      .bottom-content__latest
-        %p
-          最新のツイート
-    .bottom-content
-      .bottom-content__name
-        %p
-          グループ
-      .bottom-content__latest
-        %p
-          最新のツイート
+      - @groups.each do |group|
+        .bottom-content__name
+          %p
+            = group.name
+        .bottom-content__latest
+          %p
+            最新のツイート
 
 .main
   .header
