@@ -25,7 +25,7 @@ class GroupsController < ApplicationController
     if @group.update(group_params)
       redirect_to :root,notice: 'グループを編集しました。'
       else
-        render :edit,alert: '失敗しました。'
+        render :edit
       end
   end
 
