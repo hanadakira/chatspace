@@ -27,6 +27,9 @@ html,body{
       font-size: 16px;
       color: $fontColor;
       padding-top: 70px;
+      .fa{
+        color: white;
+      }
     }
   }
   .bottom{
@@ -131,11 +134,14 @@ html,body{
       &--image{
         margin-top: 15px;
         float: left;
-        width:18px;
-        height:20px;
+        width: 18px;
+        height: 20px;
         overflow: hidden;
         background-color: white;
         padding: 14px 10px 16px 20px;
+        .hidden{
+          display: none;
+        }
       }
       &--button{
           height: 55px;

@@ -1,0 +1,18 @@
+.left-content
+  .header
+    .header__name
+      %p
+        hanada
+    .header__edit
+      = link_to new_group_path do
+        %i.fa.fa-pencil-square-o
+      = link_to edit_user_registration_path do
+        %i.fa.fa-cog
+  .bottom
+    - @groups.each do |group|
+      .bottom-content
+        =link_to messages_path do
+          %p.bottom-content__name
+            = group.name
+          %p.bottom-content__latest
+            最新のメッセージ

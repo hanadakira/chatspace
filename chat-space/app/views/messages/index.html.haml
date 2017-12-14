@@ -1,0 +1,42 @@
+= render 'messages/index'
+.main
+  .header
+    .header__group
+      .header__group-title
+        %p
+          hanada
+      .header__group-member
+        %p
+          "MEMBER:
+    .header__edit
+      =link_to edit_group_path(@groups.ids) do
+        %header__edit-button Edit
+  .middle
+    .middle-content
+      .middle-content__name
+        %p
+          ユーザーの名前
+      .middle-content__date
+        %p
+          2017/11/11 23:23:23
+      .middle-content__message
+        %p
+          内容
+    .middle-content
+      .middle-content__name
+        %p
+          ユーザーの名前
+      .middle-content__date
+        %p
+          2017/11/11 23:23:23
+      .middle-content__message
+        %p
+          内容
+  .footer
+    .footer__content
+    = form_for "" do |f|
+      = f.text_field :body, class: "footer__content--text", placeholder: "type a message"
+      %label.footer__content--image
+        %i.fa.fa-image
+          = f.file_field :image,class: "hidden"
+      = f.submit value: "Send",class: "footer__content--button"
