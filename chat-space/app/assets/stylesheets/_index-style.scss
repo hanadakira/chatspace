@@ -122,34 +122,29 @@ html,body{
       &--text{
         float:left;
         padding:10px 0;
+        height: $formHeight;
+        margin: 15px 0px 10px 10px;
+        padding: 0 10px;
         width: 80%;
-        & input[type="text"] {
-          height: $formHeight;
-          margin: 0 10px;
-          padding: 0 10px;
-          width: 100%;
-        }
+        border: none;
       }
       &--image{
-        margin-top: 20px;
+        margin-top: 15px;
         float: left;
-        & input[type="file"]{
-          margin-top: 5px;
-          width:18px;
-          height:15px;
-          overflow: hidden;
-        }
+        width:18px;
+        height:20px;
+        overflow: hidden;
+        background-color: white;
+        padding: 14px 10px 16px 20px;
       }
       &--button{
-        & input[type="submit"] {
           height: 55px;
           padding: 0 30px;
-          margin: 9px 0 0 50px;
+          margin: 15px 0 0 10px;
           color: $fontColor;
           background: $buttonColor;
           float: left;
           border: none;
-        }
       }
     }
   }

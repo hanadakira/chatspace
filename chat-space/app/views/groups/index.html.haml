@@ -9,14 +9,12 @@
       = link_to edit_user_registration_path do
         %i.fa.fa-cog
   .bottom
-    .bottom-content
-      - @groups.each do |group|
-        .bottom-content__name
-          %p
-            = group.name
-        .bottom-content__latest
-          %p
-            最新のツイート
+    - @groups.each do |group|
+      .bottom-content
+        %p.bottom-content__name
+          = group.name
+        %p.bottom-content__latest
+          最新のツイート
 
 .main
   .header
@@ -28,8 +26,9 @@
         %p
           MEMBER: member1,member2
     .header__edit
-      =link_to root_path do
-        .header__edit-button Edit
+      =link_to edit_group_path(@groups.ids) do
+        %header__edit-button Edit
+      -# = link_to edit_group_path(group) ,method: :get do
   .middle
     .middle-content
       .middle-content__name
@@ -53,11 +52,13 @@
           内容
   .footer
     .footer__content
-      %form{ action: "/",method: "post"}
-        .footer__content--text
-          %input{ type:"text", name: "text", placeholder:"type a message"}
-        .footer__content--image
-          %labal{ id:"image"}
-            %input.fa.fa-image{ type: :file, name: "image", id: "image"}
-        .footer__content--button
-          %input{ type: :submit, value:"Send"}
+    = form_for "" do |f|
+      = f.text_field "", class: "footer__content--text", placeholder: "type a message"
+      %label.footer__content--image
+        %i.fa.fa-image
+          = f.file_field "",class: "footer__content--image"
+      = f.submit value: "Send",class: "footer__content--button"
+
+
+
+
