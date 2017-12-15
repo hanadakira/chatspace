@@ -1,28 +1,28 @@
 = render 'messages/index'
 .main
   .header
-    .header__group
-      .header__group-title
-        =@group.name
     - @group.group_users.each do |group_user|
-      .header__group-member
-        = "Member:#{group_user.user.name}"
-    .header__edit
-      =link_to edit_group_path(@groups.ids) do
-        %header__edit-button Edit
+      .header__group
+        .header__group-title
+          =@group.name
+        .header__group-member
+          = "Member:#{group_user.user.name}"
+      .header__edit
+        =link_to edit_group_path(@groups.ids) do
+          %header__edit-button Edit
   .middle
-    .middle-content
     - @messages.each do |message|
-      .middle-content__name
-        %p
-          = message.user.name
-      .middle-content__date
-        %p
-          = message.created_at
-      .middle-content__message
-        %p
-          = message.body
-          = image_tag message.image if message.image.present?
+      .middle-content
+        .middle-content__name
+          %p
+            = message.user.name
+        .middle-content__date
+          %p
+            = message.created_at
+        .middle-content__message
+          %p
+            = message.body
+            = image_tag message.image if message.image.present?
 
   .footer
     .footer__content
