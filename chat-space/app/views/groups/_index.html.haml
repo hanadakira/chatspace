@@ -1,0 +1,22 @@
+.left-content
+  .header
+    .header__name
+      = current_user.name
+    .header__edit
+      = link_to new_group_path do
+        %i.fa.fa-pencil-square-o
+      = link_to edit_user_registration_path do
+        %i.fa.fa-cog
+  .bottom
+    - @groups.each do |group|
+      .bottom-content
+        =link_to group_messages_path(group.id) do
+          %p.bottom-content__name
+            = group.name
+          %p.bottom-content__latest
+            -if group.messages.last
+              = group.messages.last[:body]
+            -else
+              0
+
+

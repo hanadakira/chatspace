@@ -1,0 +1,34 @@
+= render 'messages/index'
+.main
+  .header
+    - @group.group_users.each do |group_user|
+      .header__group
+        .header__group-title
+          =@group.name
+        .header__group-member
+          = "Member:#{group_user.user.name}"
+      .header__edit
+        =link_to edit_group_path(@groups.ids) do
+          %header__edit-button Edit
+  .middle
+    - @messages.each do |message|
+      .middle-content
+        .middle-content__name
+          %p
+            = message.user.name
+        .middle-content__date
+          %p
+            = message.created_at
+        .middle-content__message
+          %p
+            = message.body
+            = image_tag message.image if message.image.present?
+
+  .footer
+    .footer__content
+    = form_for [@group,@message] do |f|
+      = f.text_field :body, class: "footer__content--text", placeholder: "type a message"
+      %label.footer__content--image
+        %i.fa.fa-image
+          = f.file_field :image,class: "hidden"
+      = f.submit value: "Send",class: "footer__content--button"
