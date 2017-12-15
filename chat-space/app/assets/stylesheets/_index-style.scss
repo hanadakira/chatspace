@@ -71,14 +71,15 @@ html,body{
         padding-bottom: 15px;
       }
       &-member{
-        font-size: 12px;
+        padding-left: 40px;
+        font-size: 16px;
         color: $mainFontColorSub;
       }
     }
     &__edit{
       float: right;
       border: 1px solid $buttonColor;
-      margin: 28px 40px 0 0;
+      margin: 0 40px 0 0;
       text-align: center;
       padding: 10px 20px;
       color: $buttonColor;
