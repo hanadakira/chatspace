@@ -14,4 +14,9 @@
           %p.bottom-content__name
             = group.name
           %p.bottom-content__latest
-            最新のメッセージ
+            -if group.messages.last
+              = group.messages.last[:body]
+            -else
+              0
+
+
