@@ -3,7 +3,6 @@ require 'rails_helper'
 describe "message" do
   describe '#create' do
     it "メッセージを保存できる" do
-      # binding.pry
       message = build(:message)
       expect(message).to be_valid
     end
@@ -21,7 +20,7 @@ describe "message" do
     end
   end
   describe '#create' do
-    it "メッセージを保存できる" do
+    it "メッセージも画像もないと保存できない" do
       message = build(:message, image: "",body: "")
       message.valid?
       expect(message.errors[:body_image_present]).to include("を入力してください")
