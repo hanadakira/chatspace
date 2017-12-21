@@ -1,7 +1,7 @@
 $(function(){
   $(document).on('turbolinks:load',function(){
   function buildHTML(message){
-    console.log(message.image);
+    var image_present = message.image.url? `<img src=${message.image.url}>` : "";
     var html = `<div class='middle-content'>
 <div class='middle-content__name'>
 <p>
@@ -15,11 +15,11 @@ ${ message.date }
 </div>
 <div class='middle-content__message'>
 <p>
-${ message.body}
-<img src="${ message.image.url }">
+${ message.body }
+${ image_present }
 </p>
 </div>
-</div>`
+</div>`;
     return html;
   }
   $('#message_content').on('submit', function(e){
@@ -36,12 +36,15 @@ ${ message.body}
   })
     .done(function(data){
       var html = buildHTML(data);
+      console.log(html)
       $('.middle').append(html);
       $('.footer__content--text').val('')
+      $('.hidden').val('')
       $('.footer__content--button').removeAttr("disabled");
     })
     .fail(function(){
       alert('error');
+      $('.footer__content--button').removeAttr("disabled");
     })
   })
 });

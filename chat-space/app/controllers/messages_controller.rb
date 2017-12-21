@@ -4,16 +4,20 @@ class MessagesController < ApplicationController
     @groups = current_user.groups.order('id DESC')
     @message = Message.new
     @group = Group.find(params[:group_id])
-    @messages = Message.includes(:group).order("created_at ASC")
+    @messages = Message.includes(:group).order("created_at DESC")
   end
 
   def create
     # binding.pry
     @group = Group.find(params[:group_id])
-    @message = Message.create(message_params)
-    respond_to do |format|
-      format.html { redirect_to group_messages_path(@group) }
-      format.json
+    @message = Message.new(message_params)
+    if @message.save
+      respond_to do |format|
+        format.html { redirect_to group_messages_path(@group) }
+        format.json
+      end
+    else
+      render:index
     end
   end
 
