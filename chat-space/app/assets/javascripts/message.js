@@ -40,6 +40,7 @@ $(function(){
       $('.middle').append(html);
       $('.footer__content--text').val('')
       $('.hidden').val('')
+      $('.middle').animate({scrollTop: $('.middle')[0].scrollHeight}, 'fast');
       $('.footer__content--button').removeAttr("disabled");
     })
     .fail(function(){
