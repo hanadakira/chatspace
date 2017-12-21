@@ -1,5 +1,5 @@
 $(function(){
-  $(document).on('turbolinks:load',function(){
+  // $(document).on('turbolinks:load',function(){
   function buildHTML(message){
     var image_present = message.image.url? `<img src=${message.image.url}>` : "";
     var html = `<div class='middle-content'>
