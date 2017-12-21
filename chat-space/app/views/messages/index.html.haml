@@ -11,18 +11,19 @@
         =link_to edit_group_path(@groups.ids) do
           %header__edit-button Edit
   .middle
-    - @messages.each do |message|
+    / -binding.pry
+    - @group.messages.each do |group|
       .middle-content
         .middle-content__name
           %p
-            = message.user.name
+            = group.user.name
         .middle-content__date
           %p
-            = message.created_at
+            = group.created_at
         .middle-content__message
           %p
-            = message.body
-            = image_tag message.image if message.image.present?
+            = group.body
+            = image_tag group.image if group.image.present?
 
   .footer
     .footer__content
