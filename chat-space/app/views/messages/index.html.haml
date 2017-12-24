@@ -1,15 +1,16 @@
 = render 'messages/index'
 .main
   .header
-    - @group.group_users.each do |group_user|
-      .header__group
-        .header__group-title
-          =@group.name
-        .header__group-member
-          = "Member:#{group_user.user.name}"
-      .header__edit
-        =link_to edit_group_path(@groups.ids) do
-          %header__edit-button Edit
+    .header__group
+      .header__group-title
+        =@group.name
+      .header__group-member
+        Member:
+        -@group.users.each do |user|
+          =user.name
+    .header__edit
+      =link_to edit_group_path(@group) do
+        %header__edit-button Edit
   .middle
     / -binding.pry
     - @group.messages.each do |group|
@@ -28,8 +29,8 @@
   .footer
     .footer__content
     = form_for [@group,@message],html:{id:"message_content"} do |f|
-      = f.text_field :body, class: "footer__content--text", placeholder: "type a message"
+      = f.text_field :body, class: "footer__content--text", placeholder: "type a message";
       %label.footer__content--image
         %i.fa.fa-image
           = f.file_field :image,class: "hidden"
-      = f.submit value: "Send",class: "footer__content--button"
+      = f.submit value: "登録する",class: "footer__content--button"
