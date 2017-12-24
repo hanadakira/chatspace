@@ -51,7 +51,6 @@ $(document).on('turbolinks:load', function(){
 
     $(".chat-group-form__field--right").on("click", ".user-search-add", function() {
        var user = $(this)
-       console.log(this);
        user_id = user.data('user-id')
        user_name = user.data('user-name')
 
