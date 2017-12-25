@@ -1,23 +1,17 @@
 
 $(document).on('turbolinks:load',function(){
   function buildHTML(message){
-    var image_present = message.image? `<img src=${message.image.url}>` : "";
+    var image_present = message.image.presence? `<img src=${message.image.url}>` : "";
     var html = `<div class='middle-content'>
                   <div class='middle-content__name'>
-                    <p>
                       ${ message.user_name }
-                    </p>
                   </div>
                   <div class='middle-content__date'>
-                    <p>
                       ${ message.date }
-                    </p>
                   </div>
                   <div class='middle-content__message'>
-                    <p>
                       ${ message.body }
                       ${ image_present }
-                    </p>
                   </div>
                 </div>`;
                     return html;
@@ -68,9 +62,11 @@ setInterval(function() {
       }
     });
     $('.middle').animate({scrollTop: $('.middle')[0].scrollHeight}, 'fast');
+    $('.footer__content--button').removeAttr("disabled");
     })
     .fail(function(data){
     alert('error');
+    $('.footer__content--button').removeAttr("disabled");
     });
    } , 5000 );
 
