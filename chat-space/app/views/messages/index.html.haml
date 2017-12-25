@@ -14,7 +14,7 @@
   .middle
     / -binding.pry
     - @group.messages.each do |group|
-      .middle-content
+      .middle-content{'data-message-id': "#{group.id}"}
         .middle-content__name
           %p
             = group.user.name
