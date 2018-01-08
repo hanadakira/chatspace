@@ -28,6 +28,7 @@
 
   .footer
     .footer__content
+    / -binding.pry
     = form_for [@group,@message],html:{id:"message_content"} do |f|
       = f.text_field :body, class: "footer__content--text", placeholder: "type a message";
       %label.footer__content--image

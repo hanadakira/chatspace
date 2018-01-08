@@ -5,7 +5,7 @@ before_action :set_group, only: [:index,:new,:create]
   def index
     @groups = current_user.groups.order('id DESC')
     @message = Message.new
-    @messages = @group.messages.includes(:user)
+    # @messages = @group.messages.includes(:user)
     respond_to do |format|
       format.html
       format.json

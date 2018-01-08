@@ -43,7 +43,6 @@ $(document).on('turbolinks:load',function(){
     return false
   })
 setInterval(function() {
-  // console.log('${message.id}')
     var id = $('.middle-content').last().data('message-id')
     var url = $(location).attr('pathname')
     $.ajax({
